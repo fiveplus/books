@@ -1,0 +1,19 @@
+<ion-view view-title="书架">
+    <ion-content>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <i class="icon ion-social-buffer"></i>
+                    我的书架
+                </div>
+            </div>
+            <ion-list>
+                <ion-item class="item item-thumbnail-top" ng-repeat="b in books" ng-style="bookstyle" href="#/app/reader/{{b.id}}" >
+                    <img width="100%" ng-src="{{b.picture}}"  />
+                    <div align="center">{{b.book_name}}</div>
+                </ion-item>
+                <div class="clear"></div>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

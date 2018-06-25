@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ace.dao.BookMapper">
+	<resultMap type="com.ace.entity.Book" id="BaseResultMap">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<id column="name" property="name" jdbcType="VARCHAR" />
+		<id column="author" property="author" jdbcType="VARCHAR" />
+		<id column="copy_right" property="copyRight" jdbcType="VARCHAR" />
+		<id column="price" property="price" jdbcType="DOUBLE" />
+		<id column="public_house" property="publicHouse" jdbcType="VARCHAR" />
+		<id column="public_time" property="publicTime" jdbcType="VARCHAR" />
+		<id column="create_time" property="createTime" jdbcType="VARCHAR" />
+		<id column="info" property="info" jdbcType="VARCHAR" />
+		<id column="read_count" property="readCount" jdbcType="VARCHAR" />
+		<id column="recommend" property="recommend" jdbcType="VARCHAR" />
+		<id column="author_info" property="authorInfo" jdbcType="VARCHAR" />
+		<id column="type_id" property="typeId" jdbcType="INTEGER" />
+		<id column="picture" property="picture" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		id,name,author,copy_right,price,public_house,public_time,create_time,info,read_count,recommend,author_info,type_id,picture
+	</sql>
+	
+	<select id="getBookList" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from tbl_book limit 0,${num} 
+	</select>
+	
+	<select id="getBookListByTypeId" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from tbl_book where type_id=#{typeId,jdbcType=INTEGER} 
+	</select>
+	
+	<select id="getBookListLikeName" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from tbl_book where name like CONCAT('%',#{name},'%')
+	</select>
+	
+	<select id="getBookListByParentId" resultMap="BaseResultMap">
+		select b.* from tbl_book b left join tbl_booktype bt on b.type_id = bt.id where bt.parent_id=#{parentId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="getBookListOrderByReadCount" resultMap="BaseResultMap">
+		select b.* from tbl_book b order by b.read_count desc 
+	</select>
+	
+	<select id="getBookListByNoPrice" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from tbl_book where price = 0 order by create_time 
+	</select>
+	
+	<select id="getBookListByCreateTime" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from tbl_book where 1 = 1 order by create_time 
+	</select>
+	
+</mapper>

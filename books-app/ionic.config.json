@@ -1,0 +1,20 @@
+{
+  "name": "books-app",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/cms",
+      "proxyUrl": "http://121.42.147.218:9090/cms"
+    }
+  ],
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ]
+}

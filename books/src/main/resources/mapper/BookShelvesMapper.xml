@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ace.dao.BookShelvesMapper">
+	<resultMap type="com.ace.entity.BookShelves" id="BaseResultMap">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<id column="book_id" property="bookId" jdbcType="INTEGER" />
+		<id column="bookfile_id" property="bookfileId" jdbcType="VARCHAR" />
+		<id column="create_time" property="createTime" jdbcType="VARCHAR" />
+		<id column="user_id" property="userId" jdbcType="INTEGER" />
+		<id column="remark" property="remark" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id,book_id,bookfile_id,create_time,user_id,remark
+	</sql>
+	
+	<select id="getBookShelvesByUserIdAndBookId" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from tbl_bookshelves where 
+		user_id = #{userId,jdbcType=VARCHAR} 
+		and book_id = #{bookId,jdbcType=VARCHAR}  
+	</select>
+</mapper>

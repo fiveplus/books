@@ -1,0 +1,143 @@
+/* Empty. Add your own CSS if you like */
+.center{
+    text-align:center;
+}
+.padding-1{
+    padding:15px 0 15px 0;
+}
+.default-a{
+    text-decoration:none;
+    color:#000;
+}
+.menu-head{
+    padding-top:5px;
+    padding-bottom:5px;
+    background:#ffefe1;
+}
+.clear{
+    clear:both;
+}
+.selected{
+    font-weight:bold;
+}
+.read-content{
+    background-color: #e9e9e9;
+    overflow:hidden;
+}
+
+#canvas{
+    padding-top:30px;
+    padding-left:20px;
+}
+
+#before{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    background: firebrick;
+    opacity: 0.6;
+}
+.pop{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    /* height: 80px; */
+    background: #333333;
+    z-index: 100;
+    width: 100%;
+    color: white;
+    padding: 10px 0px;
+    /* display: none; */
+}
+.progress{
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background: white;
+    left: 10%;
+    top: 5px;
+}
+#progress_top{
+    position: absolute;
+    width: 10%;
+    height: 2px;
+    background: gold;
+    left: 10%;
+    top: 5px;
+}
+.netx-container{
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    height: 100%;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 2rem;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.page-container{
+    border-bottom: 1px solid #CACACA;
+    font-size: 1rem;
+    height: 35px;
+    text-align: center;
+                
+}
+.progress-container{
+    position: relative;
+}
+.font-container{
+    width: 50%;
+    border: 1px solid #CACACA;
+    border-radius: 5px;
+    display: flex;
+}
+.font-container span{
+    flex: 3;
+    box-sizing: border-box;
+    /*width: 33%;*/
+    /*float: left;*/
+    display: inline-block;
+    text-align: center;
+    font-size: 1rem;
+    height: 25px;
+    line-height: 25px;
+    border-left: 1px solid #CACACA;
+}
+.font-container span:first-child{
+    border-left: 0px solid #CACACA;
+}
+.font-container .active{
+    background: gold;
+    color: #333333;
+}
+.bottom-cont{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.color-container{
+    position: absolute;
+    right: 0%;
+    top: 0px;
+}
+.color-container span{
+    width: 50%;
+    float: left;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: blanchedalmond;
+    border-radius: 50%;
+    border: 1px solid #CACACA;
+    margin-left: 10px;
+}

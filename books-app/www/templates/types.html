@@ -1,0 +1,22 @@
+<ion-view>
+    <ion-nav-title> {{type.name}} </ion-nav-title>
+    <ion-content>
+        <div>
+            <div class="row"><h5>{{type.name}}</h5></div>
+            <div class="row"><p><font size="-1">{{type.name}}</font></p></div>
+            <img ng-src="{{type.picture}}" width="100%"/>
+            <div>&nbsp;</div>
+        </div>
+        <div style="background:#eee">&nbsp;</div>
+        <ion-list>
+            <ion-item ng-if="books.length>0" class="item item-thumbnail-left" ng-repeat="b in books" href="#/app/playlists/{{b.id}}">
+                <img ng-src="{{b.picture}}" class="col-33" />
+                <h5>&nbsp;</h5>
+                <h2>{{b.name}}</h2>
+                <span><font size="-1">{{b.author}}</font></span>
+                <p ng-bind-html="b.info"></p>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="hasmore" icon="ion-loading-d" on-infinite="loadbooks(next)"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

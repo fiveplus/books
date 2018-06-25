@@ -1,0 +1,140 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ionic-native-transitions",
+        "scope": null,
+        "escapedName": "ionic-native-transitions",
+        "name": "ionic-native-transitions",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/hack/Downloads/ionic"
+    ]
+  ],
+  "_cnpm_publish_time": 1483653042179,
+  "_from": "ionic-native-transitions@latest",
+  "_hasShrinkwrap": false,
+  "_id": "ionic-native-transitions@1.0.3",
+  "_inCache": true,
+  "_location": "/ionic-native-transitions",
+  "_nodeVersion": "6.9.2",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/ionic-native-transitions-1.0.3.tgz_1483653039921_0.004848464159294963"
+  },
+  "_npmUser": {
+    "name": "kenmickles",
+    "email": "ken@37i.net"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ionic-native-transitions",
+    "scope": null,
+    "escapedName": "ionic-native-transitions",
+    "name": "ionic-native-transitions",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/ionic-native-transitions/download/ionic-native-transitions-1.0.3.tgz",
+  "_shasum": "adcd8f54ca2010da090da575514444cf821fd0b9",
+  "_shrinkwrap": null,
+  "_spec": "ionic-native-transitions",
+  "_where": "/Users/hack/Downloads/ionic",
+  "author": {
+    "name": "shprink",
+    "email": "contact@julienrenaux.fr"
+  },
+  "bugs": {
+    "url": "https://github.com/shprink/ionic-native-transitions/issues"
+  },
+  "dependencies": {},
+  "description": "Native transitions for Ionic applications",
+  "devDependencies": {
+    "angular-ui-router": "^0.2.15",
+    "babel-core": "^5.6.15",
+    "babel-loader": "^5.2.2",
+    "cordova": "~5.3.0",
+    "css-loader": "^0.19.0",
+    "exports-loader": "^0.6.2",
+    "expose-loader": "^0.6.0",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.6.1",
+    "ionic-angular": "^1.3.1",
+    "json-loader": "^0.5.2",
+    "ng-annotate-loader": "~0.0.6",
+    "path": "^0.4.9",
+    "style-loader": "^0.12.4",
+    "util": "^0.10.3",
+    "webpack": "~1.10.0",
+    "webpack-dev-server": "~1.10.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "adcd8f54ca2010da090da575514444cf821fd0b9",
+    "size": 28034,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/ionic-native-transitions/download/ionic-native-transitions-1.0.3.tgz"
+  },
+  "gitHead": "cc10ca2605b16d433e6c28ee53af46a80c43c18c",
+  "homepage": "https://github.com/shprink/ionic-native-transitions",
+  "keywords": [
+    "ionic",
+    "cordova",
+    "telerik",
+    "angular",
+    "angularjs",
+    "native",
+    "transition",
+    "transitions"
+  ],
+  "license": "MIT",
+  "main": "dist/ionic-native-transitions.js",
+  "maintainers": [
+    {
+      "name": "kenmickles",
+      "email": "ken@37i.net"
+    },
+    {
+      "name": "shprink",
+      "email": "contact@julienrenaux.fr"
+    }
+  ],
+  "name": "ionic-native-transitions",
+  "optionalDependencies": {},
+  "pearDependencies": {
+    "restangular": "^1.4.0"
+  },
+  "publish_time": 1483653042179,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shprink/ionic-native-transitions.git"
+  },
+  "scripts": {
+    "android": "npm run dumpdev && npm run dumpTestDev && cordova run android",
+    "build": "npm run dumpdev && npm run dumpprod",
+    "dumpTestDev": "webpack --progress --colors -d",
+    "dumpTestProd": "webpack --progress --colors -p",
+    "dumpdev": "webpack --progress --colors --config webpack.config.dist.js -d",
+    "dumpprod": "webpack --progress --colors --config webpack.config.dist.min.js -p",
+    "installCordova": "npm run platformAddAll && npm run pluginAddAll",
+    "ios": "npm run dumpdev && npm run dumpTestDev && cordova run ios --device",
+    "iosEmulator": "npm run dumpdev && npm run dumpTestDev && cordova run ios",
+    "platformAddAll": "npm run platformAddAndroid && npm run platformAddIOS",
+    "platformAddAndroid": "cordova platform add android@5.x",
+    "platformAddIOS": "cordova platform add ios",
+    "pluginAddAll": "cordova plugin add cordova-plugin-crosswalk-webview@1.6.0 https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.6.5",
+    "runAllDevice": "npm run dumpdev && npm run dumpTestDev && cordova run android && cordova run ios --device",
+    "start": "webpack-dev-server --port 8080 --json --progress",
+    "watch": "webpack --watch --progress --colors --config webpack.config.dist.js -d"
+  },
+  "version": "1.0.3"
+}

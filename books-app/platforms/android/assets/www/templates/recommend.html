@@ -1,0 +1,20 @@
+<ion-view view-title="热门推荐">
+    <ion-content>
+        <ion-list>
+            <ion-item>
+                <h2>今日热点</h2>
+            </ion-item>
+            <ion-item class="item item-thumbnail-left" ng-repeat="b in books" href="#/app/playlists/{{b.id}}">
+                <img ng-src="{{b.picture}}" class="col-33" />
+                <h5>&nbsp;</h5>
+                <h2>{{b.name}}</h2>
+                <span><font size="-1">{{b.author}}</font></span>
+                <p ng-bind-html="b.info"></p>
+                <p>
+                    价格：<font color="red"><b>{{b.price}}</b>元</font>
+                </p>
+            </ion-item>
+        </ion-list>
+        
+    </ion-content>
+</ion-view>

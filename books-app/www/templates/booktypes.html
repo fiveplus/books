@@ -1,0 +1,32 @@
+<ion-view view-title="分类">
+    <ion-content>
+        <div class="row">
+            <div class="col">
+                <i class="icon ion-social-buffer"></i>
+                不能错过的好书
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="img/type_banner.jpg" width="100%" />
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <i class="icon ion-social-buffer"></i>
+                    图书分类
+                </div>
+            </div>
+            <ion-list>
+                <ion-item class="item item-thumbnail-right" ng-repeat="t in types" ng-style="typestyle" href="#/app/typelist/{{t.id}}" >
+                    <img ng-src="{{t.img}}"  />
+                    <div style="padding-left:20px;padding-top:35px;">{{t.name}}</div>
+                </ion-item>
+                <div class="clear"></div>
+            </ion-list>
+        </div>
+        
+        
+    </ion-content>
+</ion-view>

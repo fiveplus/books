@@ -1,0 +1,56 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content style="background:#ffefe1;">
+      <ion-list >
+        <!-- href="#/app/browse" -->
+        <ion-item class="menu-head" menu-close >
+            <br />
+            <img src="img/default.jpg" width="80px" />
+        </ion-item>
+        <!-- 游客 -->
+        <ion-item style="border-top:none;background:#ffefe1;" ng-if="!user" class="item item-button-right" menu-close>
+            我是一个游客
+            <button class="button button-small button-royal" ng-click="login()">
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;登录&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </button>
+        </ion-item>
+        <ion-item style="border-top:none;background:#ffefe1;" ng-if="user" class="item item-button-right" menu-close>
+            {{user.userName}}
+           
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          <i class="ion-ios-cloud"></i> 首页
+        </ion-item>
+        <ion-item menu-close href="#/app/books" >
+          <i class="icon ion-bag"></i> 已购
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          <i class="icon ion-ios-heart"></i> 想读
+        </ion-item>
+        <ion-item menu-close href="#/app/bookshelves" >
+            <i class="ion-ios-cloud"></i> 书架
+        </ion-item>
+        <ion-item menu-close href="#">
+          <i class="icon ion-ios-gear"></i> 设置
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

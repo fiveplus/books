@@ -1,0 +1,30 @@
+<ion-view>
+    <ion-nav-title>图书分类</ion-nav-title>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-class="tid==0?'selected':''" style="float:left;border:none;" ng-click="loadall(0,1)">
+                全部
+            </ion-item>
+            <ion-item ng-class="t.id==tid?'selected':''" style="float:left;border:none;" ng-click="loadall(t.id)" ng-repeat="t in types">
+                {{t.name}}
+            </ion-item>
+            <div class="clear"></div>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                <b>热门</b>
+            </ion-item>
+        </ion-list>
+        <div style="background:#eee">&nbsp;</div>
+        <ion-list>
+            <ion-item class="item item-thumbnail-left" ng-repeat="b in books" href="#/app/playlists/{{b.id}}">
+                <img ng-src="{{b.picture}}" class="col-33" />
+                <h5>&nbsp;</h5>
+                <h2>{{b.name}}</h2>
+                <span><font size="-1">{{b.author}}</font></span>
+                <p ng-bind-html="b.info"></p>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="hasmore" icon="ion-loading-d" on-infinite="loadlist(tid,next)"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

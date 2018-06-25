@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ace.dao.BookFileMapper">
+	<resultMap type="com.ace.entity.BookFile" id="BaseResultMap">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<id column="name" property="name" jdbcType="VARCHAR" />
+		<id column="create_time" property="createTime" jdbcType="VARCHAR" />
+		<id column="book_id" property="bookId" jdbcType="INTEGER" />
+		<id column="user_id" property="userId" jdbcType="INTEGER" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		bf.id,bf.name,bf.create_time,bf.book_id,bf.user_id
+	</sql>
+	
+	<select id="queryBookFileByBookId" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from tbl_bookfile bf left join tbl_book b on bf.book_id = b.id 
+		where bf.book_id = #{bookId,jdbcType=INTEGER} 
+	</select>
+</mapper>

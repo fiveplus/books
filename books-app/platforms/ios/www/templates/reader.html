@@ -1,0 +1,28 @@
+<ion-view hide-nav-bar="!show" >
+    <ion-nav-title>{{book.name}}</ion-nav-title>
+    <ion-content class="read-content" overflow-scroll="false" style="overflow: hidden;" scroll="false" >
+        <canvas id="canvas" ng-click="page_click($event)"  >
+        </canvas>
+    </ion-content>
+    <div class="pop" id="pop" ng-show="show">
+        <div class="page-container">
+            <span id="page">{{page}}</span> / <span id="total">{{total}}</span>
+            <div class="progress-container">
+                <div class="progress"></div>
+                <div id="progress_top" ng-style="progress_top_style"></div>
+            </div>
+        </div>
+        <div class="bottom-cont">
+            <div class="font-container">
+                <span data-size="0" >A-</span>
+                <span data-size="1" class="active">A</span>
+                <span data-size="2" >A+</span>
+            </div>
+            <div class="color-container">
+                <span data-size="0" ></span>
+                <span data-size="1" style="background: white;"></span>
+            </div>
+        </div>
+    </div>
+    
+</ion-view>

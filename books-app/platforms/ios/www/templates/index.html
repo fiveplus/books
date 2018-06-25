@@ -1,0 +1,83 @@
+<ion-view view-title="Books">
+  <ion-content>
+      
+    <label class="item item-input" ng-click="search()">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search">
+    </label>
+    <img src="img/banner.jpg" width="100%"/>
+    <div class="row row-center">
+        <a class="col col-center center default-a" href="#/app/development" >
+            <i class="ion-stats-bars"></i>
+            <label>榜单</label>
+        </a>
+        <a class="col col-center center default-a" href="#/app/booktypes">
+            <i class="ion-briefcase"></i>
+            <label>分类</label>
+        </a>
+        <a class="col col-center center default-a" href="#/app/development" >
+            <i class="ion-ribbon-a"></i>
+            <label>特价</label>
+        </a>
+        <a class="col col-center center default-a" href="#/app/development" >
+            <i class="ion-ios-cloud"></i>
+            <label>杂志</label>
+        </a>
+        <a class="col col-center center default-a" href="#/app/development" >
+            <i class="ion-ios-flame"></i>
+            <label>书单</label>
+        </a>
+    </div>
+    <div style="height:1px;">&nbsp;</div>
+    <div class="row row-center" style="border-top:1px solid #ddd;border-bottom:1px solid #ddd;">
+        <a class="default-a col col-center center" style="border-right:1px solid #ddd;" href="#/app/recommend" >
+            <h5><font color="red">热门推荐</font></h5>
+            <label><font size="-1">大家都爱看的小说</font></label>
+            <img src="img/1.png" width="100%" />
+        </a>
+        <a class="default-a col col-center center" style="border-right:1px solid #ddd;" href="#/app/free" >
+            <h5><font color="green">独家免费</font></h5>
+            <label><font size="-1">海量好书，免费下载</font></label>
+            <img src="img/2.png" width="100%" />
+        </a>
+        <a class="default-a col col-center center" href="#/app/newbooks" >
+            <h5><font color="blue">新书上架</font></h5>
+            <label><font size="-1">每天9点30分更新</font></label>
+            <img src="img/3.png" width="100%" />
+        </a>
+    </div>
+    <div style="background:#eee">&nbsp;</div>
+    
+    <ion-list>
+      <ion-item class="item item-thumbnail-left" ng-repeat="b in books" href="#/app/playlists/{{b.id}}">
+        <img ng-src="{{b.picture}}" class="col-33" />
+        <h5>&nbsp;</h5>
+        <h2>{{b.name}}</h2>
+        <span><font size="-1">{{b.author}}</font></span>
+        <p ng-bind-html="b.info"></p>
+      </ion-item>
+    </ion-list>
+    <div style="background:#eee">&nbsp;</div>
+    <div ng-repeat="l in list">
+        <a class="default-a" href="#/app/types/{{l.type.id}}/{{l.type.imgName}}">
+            <div class="row"><h5>{{l.type.name}}</h5></div>
+            <div class="row"><p><font size="-1">{{l.type.name}}</font></p></div>
+            <img ng-src="{{l.type.picture}}" width="100%"/>
+            <div>&nbsp;</div>
+        </a>
+        <div style="background:#eee">&nbsp;</div>
+        <ion-list>
+            <ion-item class="item item-thumbnail-left" ng-repeat="bb in l.books" href="#/app/playlists/{{bb.id}}">
+                <img ng-src="{{bb.picture}}" class="col-33" />
+                <h5>&nbsp;</h5> 
+                <h2>{{bb.name}}</h2>
+                <span><font size="-1">{{bb.author}}</font></span>
+                <p ng-bind-html="bb.info"></p>
+            </ion-item>
+            <div ng-if="l.books.length>0" style="background:#eee">&nbsp;</div>
+        </ion-list>
+    </div>
+    <ion-infinite-scroll ng-if="hasmore" icon="ion-loading-d" on-infinite="loadtypes(next)"></ion-infinite-scroll>
+  </ion-content>
+  
+</ion-view>

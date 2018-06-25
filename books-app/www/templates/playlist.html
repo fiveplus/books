@@ -1,0 +1,75 @@
+<ion-view view-title="">
+  <ion-nav-title> {{book.name}} </ion-nav-title>
+  <ion-content>
+    <div class="padding-1">
+        <div class="item item-thumbnail-left" style="border:none;">
+            <img ng-src="{{book.picture}}"  />
+            <h2>{{book.name}}</h2>
+            <p>{{book.author}}</p>
+            <p>
+                <i class="ion-android-star"></i>
+                <i class="ion-android-star"></i>
+                <i class="ion-android-star"></i>
+                <i class="ion-android-star-half"></i>
+                <i class="ion-android-star-outline"></i>
+                0个评价
+            </p>
+            <p>
+              价格：<i class="ion-social-yen"></i>
+              {{book.price}}元
+            </p>
+        </div>
+    </div>
+    <div class="row row-center center" style="border-bottom:1px solid #ddd;border-top:1px solid #ddd;">
+        <div class="col col-center">
+            <i class="ion-heart"></i>
+            想读
+        </div>
+        <div class="col col-center">
+            <i class="ion-checkmark-circled"></i>
+            读过
+        </div>
+        <div class="col col-center">
+            <i class="ion-android-cart"></i>
+            购物车
+        </div>
+        <div class="col col-center">
+            <i class="ion-bag"></i>
+            赠送
+        </div>
+    </div>
+    <div class="col col-center" ng-bind-html="book.info">
+        
+    </div>
+    <div style="background:#eee;">&nbsp;</div>
+    <div class="row">
+        <div class="col"><h5>作者</h5></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>{{book.author}}</p>
+        </div>
+    </div>
+    <div style="background:#eee;">&nbsp;</div>
+    <div class="row">
+        <div class="col"><h5>图书信息</h5></div>
+    </div>
+    <div class="row">
+        <div class="col">版权：{{book.publicHouse}}</div>
+    </div>
+    <div class="row">
+        <div class="col">作者：{{book.author}}</div>
+    </div>
+    <div class="row">
+        <div class="col">更新：{{book.createTime | date:'yyyy-MM-dd'}}</div>
+    </div>
+    
+  </ion-content>
+  <ion-footer-bar style="padding:0;">
+      <div class="row" style="padding:0;margin:0;">
+          <a class="col col-center center">书架 + </a>
+          <a class="col center col-66" href="#/app/reader/{{book.id}}" style="text-decoration:none;padding-top:13px;background:#ec5a3d;color:white;">免费试读</a>
+          <a class="col col-center center">购买 + </a>
+      </div>
+  </ion-footer-bar>
+</ion-view>

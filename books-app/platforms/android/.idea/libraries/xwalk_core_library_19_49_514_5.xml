@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="xwalk_core_library-19.49.514.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/19.49.514.5/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/19.49.514.5/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
